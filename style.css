@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: url('back.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.cash-register {
+    background: black;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    max-height: 700px; /* Atur tinggi maksimal kolom */
+    overflow-y: auto; /* Tambahkan overflow untuk mengaktifkan scrolling jika konten melebihi tinggi maksimal */
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    color: #ecf0f1;
+    font-weight: 600;
+    margin: 0;
+    border-bottom: 3px solid gray;
+    padding-bottom: 10px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4), 0 0 40px #16a085, 0 0 70px #16a085, 0 0 80px #16a085, 0 0 100px #16a085, 0 0 150px #16a085;
+    margin: 20px 0;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.menu {
+    background: rgb(60, 60, 60);
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%; /* Full width on small screens */
+    max-width: 500px;
+    height: auto;
+    overflow-y: auto;
+    box-sizing: border-box;
+    margin-bottom: 30px; /* Ensure some space at the bottom */
+    position: relative;
+}
+
+.menu h2 {
+    text-align: center;
+    font-family: Lucida Handwriting,cursive;
+    font-size: 27px;
+    color: #ecf0f1;
+    font-weight: 600;
+    border-bottom: 2px solid gray;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+.menu-scrollable {
+    max-height: 300px; /* Sesuaikan tinggi maksimum menu */
+    overflow-y: auto; /* Aktifkan scrolling vertikal */
+    padding-right: 10px; /* Beri ruang untuk scrollbar */
+    margin-top: 0; /* Remove any unwanted top margin */
+    position: relative;
+    flex-grow: 1;
+}
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list li {
+    padding: 16px;
+    background-color: rgba(52, 73, 94, 0.8);
+    border-bottom: 2px solid gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.menu-list li:hover {
+    background-color: #16a085;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(26, 188, 156, 0.4);
+}
+
+.menu-list li .item-name {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.menu-list li .item-price {
+    color: #1abc9c;
+    font-weight: 700;
+    font-size: 18px;
+}
+@media (max-width: 768px) {
+    .menu-scrollable {
+        max-height: 200px; /* Sesuaikan tinggi untuk layar lebih kecil */
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-scrollable {
+        max-height: 150px; /* Kurangi tinggi pada layar yang sangat kecil */
+    }
+
+    .menu-list li {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+.register-section {
+    background: rgb(60, 60, 60);
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%; /* Full width on small screens */
+    max-width: 500px;
+    height: auto;
+    overflow-y: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.summary {
+    background: #34495e;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.summary h2 {
+    font-size: 20px;
+    color: #ecf0f1;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.summary input[type="number"] {
+    padding: 12px;
+    font-size: 18px;
+    width: calc(100% - 24px);
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #2c3e50;
+    color: #ecf0f1;
+    transition: box-shadow 0.3s;
+}
+
+.summary input[type="number"]:focus {
+    box-shadow: 0 0 10px rgba(26, 188, 156, 0.8);
+}
+
+.summary button {
+    padding: 14px;
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.summary button:hover {
+    background-color: #16a085;
+    transform: scale(1.05);
+}
+
+.clear-all-btn {
+    padding: 14px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    width: 100%;
+}
+
+.clear-all-btn:hover {
+    background: linear-gradient(135deg, #c0392b, #e74c3c);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+}
+.scrollable {
+    max-height: 300px; /* Sesuaikan dengan tinggi maksimum yang Anda inginkan */
+    overflow-y: auto; /* Aktifkan scrolling pada sumbu y */
+    padding-right: 10px; /* Beri ruang untuk scrollbar */
+}
+
+.item-list-container {
+    background: #34495e;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.item-list-container h2 {
+    font-size: 20px;
+    color: #ecf0f1;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.item-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item-list li {
+    padding: 12px;
+    background-color: rgba(52, 73, 94, 0.8);
+    border-bottom: 2px solid gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.item-list li:hover {
+    background-color: #16a085;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(26, 188, 156, 0.4);
+}
+
+.item-list li .item-name {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.item-list li .item-price {
+    color: #1abc9c;
+    font-weight: 700;
+    font-size: 18px;
+}
+@media (max-width: 768px) {
+    .scrollable {
+        max-height: 200px; /* Sesuaikan tinggi untuk layar lebih kecil */
+    }
+
+    .item-list li {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scrollable {
+        max-height: 150px; /* Kurangi tinggi pada layar yang sangat kecil */
+    }
+
+    .item-list li {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+/* Media Queries for Responsiveness */
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .menu,
+    .register-section {
+        width: 100%;
+        max-width: none; /* Remove max-width for small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    .menu h2,
+    .register-section h2,
+    .item-list-container h2 {
+        font-size: 20px;
+    }
+
+    .summary h2,
+    .item-list li .item-name,
+    .item-list li .item-price {
+        font-size: 18px;
+    }
+}

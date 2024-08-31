@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Register</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="cash-register">
+        <header>
+            <h1><i class="fas fa-cash-register"></i>Cash Register</h1>
+        </header>
+        <div class="content">
+            <div class="menu">
+                <h2>Menu</h2>
+                <div class="menu-scrollable">
+                    <ul id="menuList" class="menu-list">
+                        <!-- Daftar menu akan diisi oleh JavaScript -->
+                    </ul>
+                </div>
+            </div>
+            <div class="register-section">
+                <div class="summary">
+                    <h2>Total: <span id="total">0</span></h2>
+                    <input type="number" id="payment" placeholder="Enter Payment">
+                    <button id="calculateChange"><i class="fas fa-calculator"></i> Calculate Change</button>
+                    <h2>Change: <span id="change">0</span></h2>
+                    <button id="clearAll" class="clear-all-btn"><i class="fas fa-trash"></i> Clear All</button>
+                </div>
+                <div class="item-list-container">
+                    <h2>Order List</h2>
+                    <div class="scrollable">
+                        <ul id="itemList" class="item-list"></ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
